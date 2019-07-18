@@ -20,18 +20,18 @@ let menuItems = [
   </div>
 */
 // Pass the function an array as it's only argument.
-function menuComponent(element) {
+function menuComponent(menu) {
   const menu = document.createElement('div');
-  const itemList = document.createElement('ul');
+  const menuItems = document.createElement('ul');
 
-  menu.appendChild(itemList);
+  menu.appendChild(menuItems);
 
   // Step 2: Iterate over the array creating a list item <li> element for each item in the array. 
   // Add those items to the <ul>
-  element.forEach(item => {
+  menu.forEach(item => {
     let content = document.createElement('li');
-    content.textContent = element.item;
-    itemList.appendChild(content);
+    content.textContent = menu.item;
+    menuItems.appendChild(menuComponent(menu));
 
   });
   //  Step 3: Using a DOM selector, select the menu button currently on the DOM.
@@ -40,7 +40,7 @@ function menuComponent(element) {
   menuBtn.addEventListener('click', event => {
     menu.classList.toggle('menu--open');
   });
-  //  Step 5: return the menu component.
+  //Step 5: return the menu component.
   return menu;
 
 }
@@ -48,3 +48,13 @@ function menuComponent(element) {
 const menuBtn = document.querySelector('.menu-button');
 const header = document.querySelector('.header');
 header.appendChild(menuComponent(menuItems));
+
+
+
+
+// Start Here: Create a reference to the ".menu" class
+const menu = document.querySelector(".menu");
+
+
+// Using your menuButton reference, add a click handler that calls toggleMenu
+menuBtn.addEventListener("click", menuComponent);

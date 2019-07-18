@@ -85,6 +85,38 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Professional Software Development in 2019',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -101,67 +133,58 @@ const data = [
 
 // Hint: You will need to use createElement more than once here!
 
-
+const articles = document.querySelector('.articles')
 
 function newArticle(data) {
   //define elements
+  const article = document.createElement('div');
   const articletitle = document.createElement('h2');
-  const paragraphOne = doucment.creatElement('p');
-  const paragraphTwo = doucment.creatElement('p');
-  const paragraphThree = doucment.creatElement('p');
-  const article = doucment.createElement('div');
-  const articleDate = doucment.creatElement('p');
-  const articleExpandButton = document.createElement('span');
+  const articleDate = document.createElement('p');
+  const paragraphOne = document.createElement('p');
+  const paragraphTwo = document.createElement('p');
+  const paragraphThree = document.createElement('p');
+  const articleExpandBtn = document.createElement('span');
 
-  // Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
   //text content
-  articletitle.textContent = 'data.title';
-  articleDate.textContent = 'data.date';
-  paragraphOne.textContent = 'data.firstParagraph';
-  paragraphTwo.textContent = 'data.secondParagraph';
-  paragraphThree.textContent = 'data.thirdParagraph';
-  articleExpandButton.textContent = 'extend';
+  articletitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  paragraphOne.textContent = data.firstParagraph;
+  paragraphTwo.textContent = data.secondParagraph;
+  paragraphThree.textContent = data.thirdParagraph;
+  articleExpandBtn.textContent = 'Extend';
 
   //stucture of elements
-  article.appendchild(articletitle);
-  article.appendchild(paragraphOne);
-  article.appendchild(paragraphTwo);
-  article.appendchild(paragraphThree);
-  article.appendchild(article);
-  article.appendchild(articleExpandButton);
-  article.appendchild(articleDate);
+
+  article.appendChild(articletitle);
+  article.appendChild(articleDate);
+  article.appendChild(paragraphOne);
+  article.appendChild(paragraphTwo);
+  article.appendChild(paragraphThree);
+  article.appendChild(articleExpandBtn);
+
 
   //class names
   article.classList.add('article');
-  articleExpandButton.classList.add('expandButton');
   articleDate.classList.add('date');
+  articleExpandBtn.classList.add('expandButton');
 
-  // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   //button toggle and event
-  articleExpandButton.addEventListener('click', () => {
+  articleExpandBtn.addEventListener('click', () => {
     article.classList.toggle('article-open');
   });
 
-  // Step 3: return the entire component.
+
   return article;
 }
 
-
-// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-let newComponent = data.map((data) => {
-  return newArticle(data);
+const newComponent = data.map(data => {
+  articles.appendChild(newArticle(data));
 })
 
-// articles.forEach(article => {
-//   console.log('articles created')
-//   articles.appendchild(article)
-// })
 
-let myArticle = document.querySelector('.article');
-article.appendChild(newArticle());
- // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+
+
 
 
